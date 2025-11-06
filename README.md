@@ -6,28 +6,6 @@ This project implements an **autonomous robot navigation system** designed to lo
 
 [Pikachu Seeker Demo Video (Google Drive)](https://drive.google.com/file/d/1P8Q12GI16QvG5qBnd-x8SgZRH5N-Ua1c/view?usp=sharing)
 
-## Setup and Requirements
-
-The autonomous navigation logic is implemented in ROS 2 nodes, which interface with a pre-configured robot in the Unity ProsTwin Simulator environment.
-
-### Requirements
-
-  * **Operating System:** Recommended Linux distribution with ROS 2 support (e.g., Ubuntu 20.04/22.04)
-  * **Robot Middleware:** ROS 2
-  * **Programming Language:** Python 3.8+
-  * **Computer Vision:** OpenCV, YOLO object detection framework
-  * **Simulation Platform:** Unity ProsTwin Simulator (environment pre-configured by the instructor)
-
-### Build and Run
-
-Pseudo instructions to compile the ROS 2 workspace and execute the navigation nodes:
-
-```bash
-colcon build
-source install/setup.bash
-ros2 run <package_name> <node_name>
-```
-* *Note: to run the whole project require complex environment settings and take lots of time*
 -----
 
 ## Implementation Strategy: RGB-Only Navigation
