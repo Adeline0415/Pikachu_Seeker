@@ -1,4 +1,4 @@
-# Pikachu Seeker - Autonomous Robot Navigation
+# Pikachu Seeker - Autonomous Robot Navigation & Exploration
 
 This project implements an **autonomous robot navigation system** designed to locate and approach a Pikachu target within a simulated environment. The system leverages **ROS 2** (Robot Operating System 2) for communication and control, **YOLO** (You Only Look Once) for real-time object detection, and operates entirely on **RGB-only sensor data** provided by the **Unity ProsTwin Simulator**. The navigation logic is tailored to three distinct virtual room types.
 
