@@ -2,6 +2,10 @@
 
 This project implements an **autonomous robot navigation system** designed to locate and approach a Pikachu target within a simulated environment. The system leverages **ROS 2** (Robot Operating System 2) for communication and control, **YOLO** (You Only Look Once) for real-time object detection, and operates entirely on **RGB-only sensor data** provided by the **Unity ProsTwin Simulator**. The navigation logic is tailored to three distinct virtual room types.
 
+## Demo Video
+
+[Pikachu Seeker Demo Video (Google Drive)](https://drive.google.com/file/d/1P8Q12GI16QvG5qBnd-x8SgZRH5N-Ua1c/view?usp=sharing)
+
 ## Setup and Requirements
 
 The autonomous navigation logic is implemented in ROS 2 nodes, which interface with a pre-configured robot in the Unity ProsTwin Simulator environment.
@@ -74,9 +78,11 @@ This room is generally more open but contains various obstacles. The Pikachu's l
 #### Obstacle Avoidance (Area-Based Stagnation)
 
   * This system is key for collision avoidance using only RGB data.
-  * **Collision Detection Logic:** The bounding box area of the detected Pikachu is continuously monitored.
-      * If the **area change ratio** (relative growth/shrinkage) of the bounding box falls below a defined **threshold** (e.g., 5%) for a specific duration, it indicates that the robot is **stuck** (i.e., its distance to the target is not changing) and has hit an obstacle.
-      * *Calculation:* $area\_change\_ratio = (\text{current\_area} - \text{previous\_area}) / \text{previous\_area}$
+  * **Collision Detection Logic:** The bounding box area of the detected Pikachu is continuously monitored. If the **area change ratio** falls below a defined **threshold** (e.g., 5%) for a specific duration, it indicates the robot is stuck.
+  * **Calculation:**
+    ```
+    area_change_ratio = (current_area - previous_area) / previous_area
+    ```
   * **Avoidance Maneuver:** When a collision is detected, the robot executes a sequence:
     1.  **Reverse** (2.0 seconds)
     2.  **Turn** (2.0 seconds)
@@ -108,10 +114,6 @@ This version is identical to the Random Living Room in structure, but the Pikach
 | Ensuring robust obstacle avoidance | Dual-method (RGB image similarity + Area Stagnation) with **OR logic** to trigger avoidance. |
 
 -----
-
-## Demo Video
-
-[Pikachu Seeker Demo Video (Google Drive)](https://drive.google.com/file/d/1P8Q12GI16QvG5qBnd-x8SgZRH5N-Ua1c/view?usp=sharing)
 
 ## Project Structure
 
