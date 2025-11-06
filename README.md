@@ -40,8 +40,8 @@ This environment consists of a room with five doors, where the Pikachu target is
 
 #### Door Traversal
 
-  * **Strategy:** The robot employs a systematic, **left-to-right traversal** of the five doors.
-  * **Tracking:** A simple **Bitmap** (or boolean array) is used to track the visited status of the doors (doors `0` through `4`).
+  * **Strategy:** The robot employs a systematic, **left-to-right traversal** of the 4 doors.
+  * **Tracking:** A simple **Bitmap** (or boolean array) is used to track the visited status of the doors (doors `0` `1` `2` `3`).
   * **Goal:** The robot moves from door to door, marking each as `visited`. Once the Pikachu is detected by YOLO, the door traversal stops, and the robot locks onto the target for the final approach.
 
 ### 2\. Random Living Room
